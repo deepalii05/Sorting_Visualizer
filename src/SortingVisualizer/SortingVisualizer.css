@@ -1,0 +1,29 @@
+body{
+  background-color: rgb(56, 8, 8);
+}
+/* 
+################# Queries ########################
+Paali, please try to display the animation speed somewhere on the screen
+as for now, it is printing in the console, but not visible in UI 
+
+Size of the border box changes, based on the avg array size, see if you could fix that somehow
+
+Add highlight/shadow below bars, to make it look cooler, like in hover card effect, heheheheh
+
+
+*/
+
+.array-container {
+  border: 3px solid green; /* for temporary placing of array */
+  padding: 10px;
+  position: absolute;
+  width: 80%;
+  left: 120px;
+}
+
+.array-bar {
+  width: 25px;
+  border: 0.5px solid yellow;
+  display: inline-block;
+  margin: 0 1px;
+}

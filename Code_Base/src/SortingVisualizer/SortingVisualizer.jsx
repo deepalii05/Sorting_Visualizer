@@ -1,6 +1,7 @@
 import React from 'react';
 import { mergeSortanime } from '../Sorting_Algorithms/mergesort.js';
 import { bubbleSortanime } from "../Sorting_Algorithms/bubblesort.js";
+import { selectionSortanime } from "../Sorting_Algorithms/selectionsort.js";
 import './SortingVisualizer.css';
 // I'm thinking of keeping the color like this:
 // being parsed bar: yellow
@@ -128,6 +129,48 @@ bubbleSort() {
     }
   }
 
+SelectionSort(){
+  document.getElementById('mybtn').disabled = true;    // button disabled here
+
+  const array = this.state.array;
+  const anime = selectionSortanime(array);
+  const arrayBars = document.getElementsByClassName('array-bar');
+
+  for (let i = 0; i < anime.length; i++) {
+    setTimeout(() => {
+      
+      let [initial, final] = anime[i];
+      let initialBarStyle = arrayBars[initial].style;
+      let finalBarStyle = arrayBars[final].style;
+
+      // swapping initial & final
+      let temp = this.state.array[initial];
+      this.state.array[initial] = this.state.array[final];
+      this.state.array[final] = temp;
+
+      // Size  and color change in case of swap
+      initialBarStyle.height = `${this.state.array[initial]}px`;
+      finalBarStyle.height = `${this.state.array[final]}px`;
+
+      initialBarStyle.backgroundColor = 'yellow';
+      // finalBarStyle.backgroundColor = '#3FFF00';
+
+      // Iterating intial
+      let currentPosition = initial;
+      for (let j = 0; j < currentPosition; j++) {
+        // Parsed Bars
+        var barStyle = arrayBars[j].style;
+        barStyle.backgroundColor = 'pink';
+      }
+      if (i === anime.length - 1) {                    // Finalising a green color here
+        this.finalGreen();
+        document.getElementById('mybtn').disabled = false;    // button enabled here
+      }
+    }, i * animespeed);
+  }
+}
+
+
   finalGreen() {
     let arrayBars = document.getElementsByClassName('array-bar');
     let arrayLength = arrayBars.length;
@@ -199,19 +242,19 @@ bubbleSort() {
         </div>
         
         <div>
-        <button id = 'mybtn' onClick={() => this.newArray()}>Generate New Array</button>
-        <button onClick={() => this.mergeSort()}>Merge Sort</button>
-        <button onClick={() => this.bubbleSort()}>Bubble Sort</button> 
+        <button className = 'btn' id = 'mybtn' onClick={() => this.newArray()}>Generate New Array</button>
+        <button className = 'btn' onClick={() => this.mergeSort()}>Merge Sort</button>
+        <button className = 'btn' onClick={() => this.bubbleSort()}>Bubble Sort</button> 
         <button >Quick Sort</button>
-        <button >Selection Sort</button>
+        <button className = 'btn' onClick={() => this.SelectionSort()}>Selection Sort</button>
         <button >Insertion Sort</button>
         </div>
 
         <div>
-        <button onClick={() => this.speedup()}>Increase Speed</button>
-        <button onClick={() => this.speeddown()}>Decrease Speed</button>
-        <button onClick={() => this.arraySizeless()}>Decrease Array Size</button>
-        <button onClick={() => this.arraySizeMore()}>Increase Array Size</button>
+        <button className = 'btn' onClick={() => this.speedup()}>Increase Speed</button>
+        <button className = 'btn' onClick={() => this.speeddown()}>Decrease Speed</button>
+        <button className = 'btn' onClick={() => this.arraySizeless()}>Decrease Array Size</button>
+        <button className = 'btn' onClick={() => this.arraySizeMore()}>Increase Array Size</button>
         </div>
         
       </div>  

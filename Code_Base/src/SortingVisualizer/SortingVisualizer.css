@@ -27,3 +27,7 @@ Add highlight/shadow below bars, to make it look cooler, like in hover card effe
   display: inline-block;
   margin: 0 1px;
 }
+
+.btn{
+  cursor: pointer;
+}

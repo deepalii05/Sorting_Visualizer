@@ -53,7 +53,7 @@ export default class SortingVisualizer extends React.Component {
   }
 
 
-  // Ye clement ka code hai, almost exact, with some minor changes :)
+  // some minor changes :)
   mergeSort() {
     document.getElementById('mybtn').disabled = true;  // button enabled here
     const anime = mergeSortanime(this.state.array);

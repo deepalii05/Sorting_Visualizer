@@ -3,6 +3,7 @@ import { mergeSortanime } from '../Sorting_Algorithms/mergesort.js';
 import { bubbleSortanime } from "../Sorting_Algorithms/bubblesort.js";
 import { selectionSortanime } from "../Sorting_Algorithms/selectionsort.js";
 import './SortingVisualizer.css';
+
 // I'm thinking of keeping the color like this:
 // being parsed bar: yellow
 // almost/completely sorted: #3FFF00
@@ -176,7 +177,7 @@ SelectionSort(){
     let arrayLength = arrayBars.length;
     for (let j = 0; j < arrayLength; j++) {
       let barStyle = arrayBars[j].style;
-      barStyle.backgroundColor = '#3FFF00';
+      barStyle.background = '#54ff54';
     }
   }
 // Some Tinee-Minee Functions to improve the overall UX :)
@@ -245,9 +246,9 @@ SelectionSort(){
         <button className = 'btn' id = 'mybtn' onClick={() => this.newArray()}>Generate New Array</button>
         <button className = 'btn' onClick={() => this.mergeSort()}>Merge Sort</button>
         <button className = 'btn' onClick={() => this.bubbleSort()}>Bubble Sort</button> 
-        <button >Quick Sort</button>
+        {/* <button >Quick Sort</button> */}
         <button className = 'btn' onClick={() => this.SelectionSort()}>Selection Sort</button>
-        <button >Insertion Sort</button>
+        {/* <button >Insertion Sort</button> */}
         </div>
 
         <div>

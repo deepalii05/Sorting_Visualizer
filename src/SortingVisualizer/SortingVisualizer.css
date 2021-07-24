@@ -1,5 +1,9 @@
 body{
-  background-color: rgb(56, 8, 8);
+  background-image: url('bg.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Handlee', cursive;
+  
 }
 /* 
 ################# Queries ########################
@@ -14,9 +18,8 @@ Add highlight/shadow below bars, to make it look cooler, like in hover card effe
 */
 
 .array-container {
-  border: 3px solid green; /* for temporary placing of array */
+  margin: 20px auto;
   padding: 10px;
-  position: absolute;
   width: 80%;
   left: 120px;
 }
@@ -26,8 +29,23 @@ Add highlight/shadow below bars, to make it look cooler, like in hover card effe
   border: 0.5px solid yellow;
   display: inline-block;
   margin: 0 1px;
+  border-radius: 10px;
 }
 
+.array-bar:hover{
+  background: linear-gradient(to bottom, black, green, greenyellow, yellow);
+}
 .btn{
   cursor: pointer;
+  color: white;
+  background-color: black;
+  font-size: 15px;
+  padding: 10px;
+  margin: 4px;
+  border-radius: 20px;
+}
+
+.btn:hover{
+  color: yellow;
+  background: radial-gradient(green, black);
 }

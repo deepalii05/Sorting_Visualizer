@@ -1,5 +1,3 @@
-// Clement's code, just made some minor changes to even it with SortingVisualizer.jsx working
-
 export function mergeSortanime(array) {
   const anime = [];
   if (array.length <= 1) return array;
